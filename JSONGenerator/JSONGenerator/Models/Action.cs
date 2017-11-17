@@ -8,7 +8,7 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    class Action : ViewModelBase
+    public class Action : ViewModelBase
     {  
         public string type { get; set; }
         private ObservableCollection<Consequence> _consequences;

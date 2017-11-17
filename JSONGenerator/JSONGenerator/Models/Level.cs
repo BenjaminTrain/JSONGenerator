@@ -4,7 +4,7 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    class Level : ViewModelBase
+    public class Level : ViewModelBase
     {
         public int _ID { get; set; }
         private string _transition; 

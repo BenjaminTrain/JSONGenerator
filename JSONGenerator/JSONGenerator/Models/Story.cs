@@ -5,7 +5,7 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    class Story : ViewModelBase
+    public class Story : ViewModelBase
     {
         private int _ID;
         private ObservableCollection<Path> _paths;
