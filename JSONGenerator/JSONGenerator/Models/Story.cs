@@ -5,7 +5,7 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    class Story : ViewModelBase
+    public class Story : ViewModelBase
     {
         #region Champs
         /// <summary>

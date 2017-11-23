@@ -4,7 +4,7 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    class Block : ViewModelBase
+    public class Block : ViewModelBase
     {
         #region
         /// <summary>
