@@ -6,17 +6,40 @@ namespace JSONGenerator.Models
 {
     class Level : ViewModelBase
     {
+        #region Champs
+        /// <summary>
+        /// ID du level
+        /// </summary>
         public int _ID { get; set; }
-        private string _transition; 
-        private ObservableCollection<Block> _blocks;
-        private string _imagePath;
 
+        /// <summary>
+        /// Texte de transition entre les levels
+        /// </summary>
+        private string _transition; 
+
+        /// <summary>
+        /// Collection de blocks
+        /// </summary>
+        private ObservableCollection<Block> _blocks;
+
+        /// <summary>
+        /// Cheminde l'image du path 
+        /// </summary>
+        private string _imagePath;
+        #endregion
+
+        #region Constructeur
         public Level()
         {
             this._blocks = new ObservableCollection<Block>();
             this._uc = new LevelControl();
         }
+        #endregion
 
+        #region Accesseurs
+        /// <summary>
+        /// Collection de blocks
+        /// </summary>
         public ObservableCollection<Block> Blocks
         {
             get => _blocks;
@@ -34,7 +57,9 @@ namespace JSONGenerator.Models
             this._blocks.Add(child);
         }
 
-
+        /// <summary>
+        /// Texte de transition entre les levels
+        /// </summary>
         public string Transition
         {
             get
@@ -48,6 +73,9 @@ namespace JSONGenerator.Models
             }
         }
 
+        /// <summary>
+        /// Cheminde l'image du path 
+        /// </summary>
         public string ImagePathLevel
         {
             get
@@ -60,5 +88,6 @@ namespace JSONGenerator.Models
                 OnPropertyChanged("ImagePathLevel");
             }
         }
+        #endregion
     }
 }

@@ -58,8 +58,8 @@
             <materialDesign:PackIcon Kind="PlusCircle"/>
         </Button>
 
-        <materialDesign:Card Margin="50" Grid.Column="1" Grid.Row="0" Padding="20">
+        <StackPanel Margin="50" Grid.Column="1" Grid.Row="0">
             <ContentControl Content="{Binding SelectedItem.UC , ElementName=Scenarii}" DataContext="{Binding SelectedItem, ElementName=Scenarii}"/>
-        </materialDesign:Card>
+        </StackPanel>
     </Grid>
 </Window>

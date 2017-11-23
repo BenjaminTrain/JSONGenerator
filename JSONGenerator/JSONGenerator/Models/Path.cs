@@ -6,18 +6,40 @@ namespace JSONGenerator.Models
 {
     class Path : ViewModelBase
     {
+        #region Champs
+        /// <summary>
+        /// ID du path
+        /// </summary>
         private int _ID;
-        private int _IDStory;
-        private ObservableCollection<Level> _levels;
-        private string _description;
-        private bool _isActive;
 
+        /// <summary>
+        /// Collection de levels
+        /// </summary>
+        private ObservableCollection<Level> _levels;
+
+        /// <summary>
+        /// Description du path 
+        /// </summary>
+        private string _description;
+
+        /// <summary>
+        /// Vrai si le joueur se trouve dans ce path
+        /// </summary>
+        private bool _isActive;
+        #endregion
+
+        #region Constructeur
         public Path()
         {
             this._levels = new ObservableCollection<Level>();
             this._uc = new PathControl();
         }
+        #endregion
 
+        #region Accesseurs
+        /// <summary>
+        /// Collection de levels
+        /// </summary>
         public ObservableCollection<Level> Levels
         {
             get => _levels;
@@ -36,6 +58,9 @@ namespace JSONGenerator.Models
             this._levels.Add(child);
         }
 
+        /// <summary>
+        /// Description du path 
+        /// </summary>
         public string DescriptionPath
         {
             get
@@ -48,5 +73,6 @@ namespace JSONGenerator.Models
                 OnPropertyChanged("DescriptionPath");
             }
         }
+        #endregion
     }
 }

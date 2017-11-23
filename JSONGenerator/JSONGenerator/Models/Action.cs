@@ -9,10 +9,23 @@ using JSONGenerator.ViewModels;
 namespace JSONGenerator.Models
 {
     class Action : ViewModelBase
-    {  
+    {
+        #region Champs
+        /// <summary>
+        /// Type d'action 
+        /// </summary>
         public string type { get; set; }
+
+        /// <summary>
+        /// Liste de conséquences
+        /// </summary>
         private ObservableCollection<Consequence> _consequences;
+
+        /// <summary>
+        /// Liste de conditions
+        /// </summary>
         private ObservableCollection<Condition> _conditions;
+        #endregion
 
         //public ObservableCollection<Consequences> Consequences
         //{

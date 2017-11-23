@@ -6,18 +6,45 @@ namespace JSONGenerator.Models
 {
     class Block : ViewModelBase
     {
+        #region
+        /// <summary>
+        /// ID du block
+        /// </summary>
         private int _ID;
-        private string _description { get; set; }
-        private string _type;
-        private ObservableCollection<Action> _actions;
-        private string _accessConditions;
 
+        /// <summary>
+        /// Description du block
+        /// </summary>
+        private string _description { get; set; }
+
+        /// <summary>
+        /// Type de block
+        /// </summary>
+        private string _type;
+
+        /// <summary>
+        /// Collection d'actions
+        /// </summary>
+        private ObservableCollection<Action> _actions;
+
+        /// <summary>
+        /// Condition d'accés au block
+        /// </summary>
+        private string _accessConditions;
+        #endregion
+
+        #region Constructeur
         public Block()
         {
             this._actions = new ObservableCollection<Action>();
             this._uc = new BlockControl();
         }
+        #endregion
 
+        #region Accesseurs
+        /// <summary>
+        /// Collection d'actions
+        /// </summary>
         public ObservableCollection<Action> Actions
         {
             get => _actions;
@@ -36,6 +63,9 @@ namespace JSONGenerator.Models
             this._actions.Add(child);
         }
 
+        /// <summary>
+        /// Description du block
+        /// </summary>
         public string DescriptionBlock
         {
             get
@@ -49,6 +79,9 @@ namespace JSONGenerator.Models
             }
         }
 
+        /// <summary>
+        /// Type de block
+        /// </summary>
         public string TypeBlock
         {
             get
@@ -62,6 +95,9 @@ namespace JSONGenerator.Models
             }
         }
 
+        /// <summary>
+        /// Condition d'accés au block
+        /// </summary>
         public string AccessConditions
         {
             get
@@ -74,5 +110,6 @@ namespace JSONGenerator.Models
                 OnPropertyChanged("AccessConditions");
             }
         }
+        #endregion
     }
 }
