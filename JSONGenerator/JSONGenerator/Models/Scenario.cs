@@ -10,7 +10,7 @@ namespace JSONGenerator.Models
         public Scenario()
         {
             this._stories = new ObservableCollection<Story>();
-            this._name = "Scenarii";
+            this._name = "Scenarios";
         }
 
         public ObservableCollection<Story> Stories

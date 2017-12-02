@@ -38,6 +38,11 @@ namespace JSONGenerator.ViewModels
         /// Formulaire de l'objet
         /// </summary>
         protected UserControl _uc;
+
+        /// <summary>
+        /// Affichage de la collection de fils sous forme de carte
+        /// </summary>
+        protected UserControl _collectionUC;
         #endregion
 
         #region constructeur
@@ -88,6 +93,11 @@ namespace JSONGenerator.ViewModels
         public UserControl UC { get => _uc; }
 
         /// <summary>
+        /// Affichage de la collection de fils sous forme de carte
+        /// </summary>
+        public UserControl CollectionUC { get => _collectionUC; }
+
+        /// <summary>
         /// Liste des enfants de l'objet
         /// </summary>
         public ObservableCollection<ViewModelBase> Children { get => _childrens; }
@@ -96,13 +106,15 @@ namespace JSONGenerator.ViewModels
         /// Ajoute un élément dans la collection d'enfants
         /// </summary>
         public ICommand AddChildCmd { get => _addChildCmd; }
+
+        protected virtual void AddChild() { }
         #endregion
 
+        #region Evènement
         public void OnPropertyChanged(string propname)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propname));
         }
-
-        protected virtual void AddChild() { }
+        #endregion      
     }
 }

@@ -22,6 +22,6 @@
         <TextBox Grid.Row="0" Grid.Column="1" Margin="10" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         
         <Label Grid.Row="1" Grid.Column="0" Margin="10">Description</Label>
-        <TextBox  AcceptsReturn="True" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="1"  Margin="10" Text="{Binding DescriptionPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="1"  Margin="10" Text="{Binding DescriptionPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

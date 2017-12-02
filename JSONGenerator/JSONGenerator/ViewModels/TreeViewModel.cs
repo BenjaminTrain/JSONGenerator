@@ -5,25 +5,25 @@ namespace JSONGenerator.ViewModels
 {
     public class TreeViewModel : ViewModelBase
     {
-        private ObservableCollection<Scenario> _scenarii;
+        private ObservableCollection<Scenario> _scenarios;
 
         public TreeViewModel() {
-            _scenarii = new ObservableCollection<Scenario>
+            _scenarios = new ObservableCollection<Scenario>
             {
                 new Scenario()
             };
         }
 
-        public ObservableCollection<Scenario> Scenarii
+        public ObservableCollection<Scenario> Scenarios
         {
             get
             {
-                return _scenarii;
+                return _scenarios;
             }
             set
             {
-                _scenarii = value;
-                OnPropertyChanged("Scenarii");
+                _scenarios = value;
+                OnPropertyChanged("Scenarios");
             }
         }
     }

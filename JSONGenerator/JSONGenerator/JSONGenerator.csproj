@@ -108,6 +108,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\PathCollectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\PathControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +137,9 @@
     </Compile>
     <Compile Include="Controls\LevelControl.xaml.cs">
       <DependentUpon>LevelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PathCollectionControl.xaml.cs">
+      <DependentUpon>PathCollectionControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\PathControl.xaml.cs">
       <DependentUpon>PathControl.xaml</DependentUpon>

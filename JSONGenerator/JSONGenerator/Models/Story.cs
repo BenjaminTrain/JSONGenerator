@@ -58,6 +58,7 @@ namespace JSONGenerator.Models
         public Story() {
             this._paths = new ObservableCollection<Path>();
             this._uc = new StoryControl();
+            this._collectionUC = new PathCollectionControl();
         }
         #endregion
 

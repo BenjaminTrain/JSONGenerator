@@ -29,37 +29,39 @@
         <KeyBinding Command="{Binding ExitCmd}" Gesture="Alt+F4" />
     </Window.InputBindings>-->
 
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="8*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="650"/>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="8*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="650"/>
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
+            <TreeView Margin="10" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Scenarios}" Name="Scenarios">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="TreeViewItem" BasedOn="{StaticResource MaterialDesignTreeViewItem}">
+                        <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+                    </Style>
+                </TreeView.ItemContainerStyle>
 
-        <TreeView Margin="10" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Scenarii}" Name="Scenarii">
-            <TreeView.ItemContainerStyle>
-                <Style TargetType="TreeViewItem" BasedOn="{StaticResource MaterialDesignTreeViewItem}">
-                    <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
-                </Style>
-            </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <TextBlock Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
 
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
-                    <TextBlock Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
+            <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Command="{Binding Path=SelectedItem.AddChildCmd, ElementName=Scenarios, UpdateSourceTrigger=PropertyChanged}">
+                <materialDesign:PackIcon Kind="PlusCircle"/>
+            </Button>
 
-        <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Command="{Binding Path=SelectedItem.AddChildCmd, ElementName=Scenarii}">
-            <materialDesign:PackIcon Kind="PlusCircle"/>
-        </Button>
-
-        <StackPanel Margin="50" Grid.Column="1" Grid.Row="0">
-            <ContentControl Content="{Binding SelectedItem.UC , ElementName=Scenarii}" DataContext="{Binding SelectedItem, ElementName=Scenarii}"/>
-        </StackPanel>
-    </Grid>
+            <StackPanel Margin="50" Grid.Column="1" Grid.Row="0">
+                <ContentControl Content="{Binding SelectedItem.UC , ElementName=Scenarios}" DataContext="{Binding SelectedItem, ElementName=Scenarios}"/>
+                <ContentControl Content="{Binding SelectedItem.CollectionUC, ElementName=Scenarios}" DataContext="{Binding SelectedItem, ElementName=Scenarios}"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>
