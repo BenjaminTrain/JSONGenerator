@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="JSONGenerator.Controls.PathCollectionControl"
+﻿<UserControl x:Class="JSONGenerator.Controls.StoryCollectionControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,8 +19,10 @@
             <DataTemplate>
                 <materialDesign:Card Margin="10">
                     <StackPanel>
-                        <TextBlock Padding="15" Text="{Binding Name, StringFormat='Path name : {0}'}"></TextBlock>
-                        <TextBlock Padding="15" Text="{Binding DescriptionPath, StringFormat='Path description : {0}'}"></TextBlock>
+                        <TextBlock Padding="15" Text="{Binding Name, StringFormat='Story name : {0}'}"></TextBlock>
+                        <TextBlock Padding="15" Text="{Binding DescriptionStory, StringFormat='Story description : {0}'}"></TextBlock>
+                        <TextBlock Padding="15" Text="{Binding PEGI, StringFormat='PEGI : {0}'}"></TextBlock>
+                        <TextBlock Padding="15" Text="{Binding Author, StringFormat='Author : {0}'}"></TextBlock>
                     </StackPanel>
                 </materialDesign:Card>
             </DataTemplate>

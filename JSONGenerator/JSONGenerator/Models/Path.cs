@@ -4,18 +4,13 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    public class Path : ViewModelBase
+    public class Path : TreeBase
     {
         #region Champs
         /// <summary>
         /// ID du path
         /// </summary>
         private int _ID;
-
-        /// <summary>
-        /// Collection de levels
-        /// </summary>
-        private ObservableCollection<Level> _levels;
 
         /// <summary>
         /// Description du path 
@@ -31,31 +26,18 @@ namespace JSONGenerator.Models
         #region Constructeur
         public Path()
         {
-            this._levels = new ObservableCollection<Level>();
+            this._name = "New path";
             this._uc = new PathControl();
+            this._collectionUC = new LevelCollectionControl();
         }
         #endregion
 
         #region Accesseurs
-        /// <summary>
-        /// Collection de levels
-        /// </summary>
-        public ObservableCollection<Level> Levels
-        {
-            get => _levels;
-            set
-            {
-                _levels = value;
-                OnPropertyChanged("Levels");
-                OnPropertyChanged("Children");
-            }
-        }
-
         protected override void AddChild()
         {
             Level child = new Level();
             this._childrens.Add(child);
-            this._levels.Add(child);
+            this._collectionUC = new LevelCollectionControl();
         }
 
         /// <summary>

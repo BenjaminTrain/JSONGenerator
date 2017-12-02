@@ -6,7 +6,7 @@ using JSONGenerator.Utils;
 
 namespace JSONGenerator.ViewModels
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class TreeBase : INotifyPropertyChanged
     {
         #region Champs
         /// <summary>
@@ -27,7 +27,7 @@ namespace JSONGenerator.ViewModels
         /// <summary>
         /// Liste des enfants de l'objet
         /// </summary>
-        protected ObservableCollection<ViewModelBase> _childrens;
+        protected ObservableCollection<TreeBase> _childrens;
 
         /// <summary>
         /// Nom de l'objet
@@ -46,9 +46,9 @@ namespace JSONGenerator.ViewModels
         #endregion
 
         #region constructeur
-        public ViewModelBase()
+        public TreeBase()
         {
-            this._childrens = new ObservableCollection<ViewModelBase>();
+            this._childrens = new ObservableCollection<TreeBase>();
             this._addChildCmd = new CommandHandler(param => AddChild(), true);
             this._name = "New element";
         }
@@ -100,7 +100,7 @@ namespace JSONGenerator.ViewModels
         /// <summary>
         /// Liste des enfants de l'objet
         /// </summary>
-        public ObservableCollection<ViewModelBase> Children { get => _childrens; }
+        public ObservableCollection<TreeBase> Children { get => _childrens; }
 
         /// <summary>
         /// Ajoute un élément dans la collection d'enfants

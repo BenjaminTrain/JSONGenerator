@@ -4,7 +4,7 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    public class Block : ViewModelBase
+    public class Block : TreeBase
     {
         #region
         /// <summary>
@@ -23,11 +23,6 @@ namespace JSONGenerator.Models
         private string _type;
 
         /// <summary>
-        /// Collection d'actions
-        /// </summary>
-        private ObservableCollection<Action> _actions;
-
-        /// <summary>
         /// Condition d'accés au block
         /// </summary>
         private string _accessConditions;
@@ -36,31 +31,17 @@ namespace JSONGenerator.Models
         #region Constructeur
         public Block()
         {
-            this._actions = new ObservableCollection<Action>();
+            this._name = "New block";
             this._uc = new BlockControl();
+            this._collectionUC = new ActionCollectionControl();
         }
         #endregion
 
         #region Accesseurs
-        /// <summary>
-        /// Collection d'actions
-        /// </summary>
-        public ObservableCollection<Action> Actions
-        {
-            get => _actions;
-            set
-            {
-                _actions = value;
-                OnPropertyChanged("Actions");
-                OnPropertyChanged("Children");
-            }
-        }
-
         protected override void AddChild()
         {
             Action child = new Action();
             this._childrens.Add(child);
-            this._actions.Add(child);
         }
 
         /// <summary>

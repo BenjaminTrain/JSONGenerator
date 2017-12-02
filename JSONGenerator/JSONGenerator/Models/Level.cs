@@ -4,7 +4,7 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    public class Level : ViewModelBase
+    public class Level : TreeBase
     {
         #region Champs
         /// <summary>
@@ -18,11 +18,6 @@ namespace JSONGenerator.Models
         private string _transition; 
 
         /// <summary>
-        /// Collection de blocks
-        /// </summary>
-        private ObservableCollection<Block> _blocks;
-
-        /// <summary>
         /// Cheminde l'image du path 
         /// </summary>
         private string _imagePath;
@@ -31,30 +26,17 @@ namespace JSONGenerator.Models
         #region Constructeur
         public Level()
         {
-            this._blocks = new ObservableCollection<Block>();
+            this._name = "New level";
             this._uc = new LevelControl();
+            this._collectionUC = new BlockCollectionControl();
         }
         #endregion
 
         #region Accesseurs
-        /// <summary>
-        /// Collection de blocks
-        /// </summary>
-        public ObservableCollection<Block> Blocks
-        {
-            get => _blocks;
-            set
-            {
-                _blocks = value;
-                OnPropertyChanged("Blocks");
-                OnPropertyChanged("Children");
-            }
-        }
         protected override void AddChild()
         {
             Block child = new Block();
             this._childrens.Add(child);
-            this._blocks.Add(child);
         }
 
         /// <summary>

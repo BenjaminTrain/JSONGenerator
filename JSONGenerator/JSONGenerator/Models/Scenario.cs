@@ -1,34 +1,22 @@
-﻿using System.Collections.ObjectModel;
+﻿using JSONGenerator.Controls;
 using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    public class Scenario : ViewModelBase
+    public class Scenario : TreeBase
     {
-        private ObservableCollection<Story> _stories;
-
+        #region Constructeur
         public Scenario()
         {
-            this._stories = new ObservableCollection<Story>();
             this._name = "Scenarios";
+            this._collectionUC = new StoryCollectionControl();
         }
-
-        public ObservableCollection<Story> Stories
-        {
-            get => _stories;
-            set
-            {
-                _stories = value;
-                OnPropertyChanged("Paths");
-                OnPropertyChanged("Children");
-            }
-        }
+        #endregion
 
         protected override void AddChild()
         {
             Story child = new Story();
             this._childrens.Add(child);
-            this._stories.Add(child);
         }
     }
 }

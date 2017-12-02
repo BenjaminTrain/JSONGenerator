@@ -8,13 +8,13 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    public class Action : ViewModelBase
+    public class Action : TreeBase
     {
         #region Champs
         /// <summary>
         /// Type d'action 
         /// </summary>
-        public string type { get; set; }
+        public string _type { get; set; }
 
         /// <summary>
         /// Liste de conséquences
@@ -25,6 +25,31 @@ namespace JSONGenerator.Models
         /// Liste de conditions
         /// </summary>
         private ObservableCollection<Condition> _conditions;
+        #endregion
+
+        #region Constructeur
+        public Action()
+        {
+            this._name = "New action";
+        }
+        #endregion
+
+        #region Accesseurs
+        /// <summary>
+        /// Type d'action
+        /// </summary>
+        public String TypeAction
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                this._type = value;
+                OnPropertyChanged("TypeAction");
+            }
+        }
         #endregion
 
         //public ObservableCollection<Consequences> Consequences

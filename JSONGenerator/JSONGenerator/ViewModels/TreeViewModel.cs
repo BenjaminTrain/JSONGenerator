@@ -3,7 +3,7 @@ using JSONGenerator.Models;
 
 namespace JSONGenerator.ViewModels
 {
-    public class TreeViewModel : ViewModelBase
+    public class TreeViewModel : TreeBase
     {
         private ObservableCollection<Scenario> _scenarios;
 

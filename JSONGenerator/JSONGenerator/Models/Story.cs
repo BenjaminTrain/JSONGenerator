@@ -5,18 +5,13 @@ using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
 {
-    public class Story : ViewModelBase
+    public class Story : TreeBase
     {
         #region Champs
         /// <summary>
         /// ID de la story
         /// </summary>
         private int _ID;
-
-        /// <summary>
-        /// Collection des paths de la story
-        /// </summary>
-        private ObservableCollection<Path> _paths;
 
         /// <summary>
         /// Description de la story
@@ -56,27 +51,13 @@ namespace JSONGenerator.Models
 
         #region Constructeur
         public Story() {
-            this._paths = new ObservableCollection<Path>();
+            this._name = "New story";
             this._uc = new StoryControl();
             this._collectionUC = new PathCollectionControl();
         }
         #endregion
 
         #region Accesseurs
-        /// <summary>
-        /// Collection des paths de la story
-        /// </summary>
-        public ObservableCollection<Path> Paths
-        {
-            get => _paths;
-            set
-            {
-                _paths = value;
-                OnPropertyChanged("Levels");
-                OnPropertyChanged("Children");
-            }
-        }
-
         /// <summary>
         /// Tag "Not safe for work"
         /// </summary>
@@ -142,7 +123,7 @@ namespace JSONGenerator.Models
         }
 
         /// <summary>
-        /// Collection des paths de la story
+        /// Description de la story
         /// </summary>
         public string DescriptionStory
         {
@@ -161,7 +142,6 @@ namespace JSONGenerator.Models
         {
             Path child = new Path();
             this._childrens.Add(child);
-            this._paths.Add(child);
         }
 
         #endregion
