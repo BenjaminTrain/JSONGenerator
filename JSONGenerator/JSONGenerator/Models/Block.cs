@@ -42,6 +42,9 @@ namespace JSONGenerator.Models
         {
             Action child = new Action();
             this._childrens.Add(child);
+
+            child.IsSelected = true;
+            IsExpanded = true;
         }
 
         /// <summary>

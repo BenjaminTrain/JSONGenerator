@@ -21,6 +21,7 @@
                     <StackPanel>
                         <TextBlock Padding="15" Text="{Binding Name, StringFormat='Story name : {0}'}"></TextBlock>
                         <TextBlock Padding="15" Text="{Binding DescriptionStory, StringFormat='Story description : {0}'}"></TextBlock>
+                        <CheckBox Padding="15" Content="NSFW" IsChecked="{Binding NSFW}" IsHitTestVisible="False"></CheckBox>
                         <TextBlock Padding="15" Text="{Binding PEGI, StringFormat='PEGI : {0}'}"></TextBlock>
                         <TextBlock Padding="15" Text="{Binding Author, StringFormat='Author : {0}'}"></TextBlock>
                     </StackPanel>

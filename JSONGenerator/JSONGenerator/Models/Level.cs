@@ -37,6 +37,9 @@ namespace JSONGenerator.Models
         {
             Block child = new Block();
             this._childrens.Add(child);
+
+            child.IsSelected = true;
+            IsExpanded = true;
         }
 
         /// <summary>

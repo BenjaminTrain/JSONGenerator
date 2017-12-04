@@ -43,6 +43,8 @@ namespace JSONGenerator.ViewModels
         /// Affichage de la collection de fils sous forme de carte
         /// </summary>
         protected UserControl _collectionUC;
+
+        private bool _isExpanded;
         #endregion
 
         #region constructeur
@@ -84,6 +86,19 @@ namespace JSONGenerator.ViewModels
             {
                 _selectedItem = value;
                 OnPropertyChanged("IsSelected");
+            }
+        }
+
+        public bool IsExpanded
+        {
+            get
+            {
+                return _isExpanded;
+            }
+            set
+            {
+                _isExpanded = value;
+                OnPropertyChanged("IsExpanded");
             }
         }
 

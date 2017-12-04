@@ -6,7 +6,7 @@ namespace JSONGenerator.ViewModels
     public class TreeViewModel : TreeBase
     {
         private ObservableCollection<Scenario> _scenarios;
-
+     
         public TreeViewModel() {
             _scenarios = new ObservableCollection<Scenario>
             {

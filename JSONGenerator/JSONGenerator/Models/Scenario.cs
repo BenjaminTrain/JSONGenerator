@@ -17,6 +17,9 @@ namespace JSONGenerator.Models
         {
             Story child = new Story();
             this._childrens.Add(child);
+
+            child.IsSelected = true;
+            IsExpanded = true;
         }
     }
 }

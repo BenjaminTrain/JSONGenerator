@@ -142,6 +142,9 @@ namespace JSONGenerator.Models
         {
             Path child = new Path();
             this._childrens.Add(child);
+
+            child.IsSelected = true;
+            IsExpanded = true;
         }
 
         #endregion

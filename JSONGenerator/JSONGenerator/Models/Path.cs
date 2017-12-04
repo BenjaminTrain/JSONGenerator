@@ -37,7 +37,9 @@ namespace JSONGenerator.Models
         {
             Level child = new Level();
             this._childrens.Add(child);
-            this._collectionUC = new LevelCollectionControl();
+
+            child.IsSelected = true;
+            IsExpanded = true;
         }
 
         /// <summary>
