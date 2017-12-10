@@ -13,13 +13,13 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
             <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Margin="10">Description</Label>
-        <TextBox  AcceptsReturn="True" TextWrapping="Wrap"  Grid.Row="0" Grid.Column="1"  Margin="10" Text="{Binding DescriptionBlock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap"  Grid.Row="0" Grid.Column="1" Margin="10" Text="{Binding DescriptionBlock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Grid.Row="1" Grid.Column="0" Margin="10">Type</Label>
         <TextBox  Grid.Row="1" Grid.Column="1"  Margin="10" Text="{Binding TypeBlock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

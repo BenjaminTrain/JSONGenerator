@@ -17,16 +17,17 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Margin="10">Story name</Label>
-        <TextBox Grid.Row="0" Grid.Column="1"  Margin="10" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="10" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Grid.Row="1" Grid.Column="0" Margin="10">Description</Label>
-        <TextBox  AcceptsReturn="True" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="1"  Margin="10" Text="{Binding DescriptionStory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox  AcceptsReturn="True" TextWrapping="Wrap"  Grid.Row="1" Grid.Column="1" Margin="10 0 10 20" Text="{Binding DescriptionStory, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Grid.Row="2" Grid.Column="0" Margin="10">NSFW</Label>
         <CheckBox Grid.Row="2" Grid.Column="1"  Margin="10" IsChecked="{Binding NSFW, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

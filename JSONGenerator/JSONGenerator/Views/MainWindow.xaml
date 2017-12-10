@@ -29,18 +29,18 @@
         <KeyBinding Command="{Binding ExitCmd}" Gesture="Alt+F4" />
     </Window.InputBindings>-->
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-        <Grid HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Background="#212121">
+        <Grid HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="8*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="650"/>
+                <RowDefinition Height="10*"/>
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
 
-            <TreeView Margin="10" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Scenarios}" Name="Scenarios">
+            <TreeView HorizontalAlignment="Stretch" Margin="10" Padding="10" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Scenarios}" Name="Scenarios" BorderBrush="DarkGray" BorderThickness="0.1">
                 <TreeView.ItemContainerStyle>
                     <Style TargetType="TreeViewItem" BasedOn="{StaticResource MaterialDesignTreeViewItem}">
                         <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
@@ -65,9 +65,9 @@
                 <materialDesign:PackIcon Kind="PlusCircle"/>
             </Button>
 
-            <StackPanel Margin="50" Grid.Column="1" Grid.Row="0">
-                <ContentControl Content="{Binding SelectedItem.UC , ElementName=Scenarios}" DataContext="{Binding SelectedItem, ElementName=Scenarios}"/>
-                <ContentControl Content="{Binding SelectedItem.CollectionUC, ElementName=Scenarios}" DataContext="{Binding SelectedItem, ElementName=Scenarios}"/>
+            <StackPanel  Grid.Column="1" Grid.Row="0" VerticalAlignment="Stretch">
+                <ContentControl Margin="75" Content="{Binding SelectedItem.UC , ElementName=Scenarios}" DataContext="{Binding SelectedItem, ElementName=Scenarios}"/>
+                <ContentControl Margin="50" Content="{Binding SelectedItem.CollectionUC, ElementName=Scenarios}" DataContext="{Binding SelectedItem, ElementName=Scenarios}"/>
             </StackPanel>
         </Grid>
     </ScrollViewer>
