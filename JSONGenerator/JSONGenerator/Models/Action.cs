@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using JSONGenerator.Controls;
 using JSONGenerator.ViewModels;
 
 namespace JSONGenerator.Models
@@ -27,6 +28,7 @@ namespace JSONGenerator.Models
         public Action()
         {
             this._name = "New action";
+            this._uc = new ActionControl();
         }
         #endregion
 

@@ -104,6 +104,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\ActionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\BlockCollectionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +154,9 @@
     </Compile>
     <Compile Include="Controls\ActionCollectionControl.xaml.cs">
       <DependentUpon>ActionCollectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ActionControl.xaml.cs">
+      <DependentUpon>ActionControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\BlockCollectionControl.xaml.cs">
       <DependentUpon>BlockCollectionControl.xaml</DependentUpon>
